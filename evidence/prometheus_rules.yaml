@@ -1,0 +1,35 @@
+groups:
+- name: slo-burn-rate
+  rules:
+  - alert: ErrorBudgetBurn_page_60m
+    expr: (job:slo_errors:ratio_rate1h / 0.0010000000000000009) > 14.4 and (job:slo_errors:ratio_rate5m
+      / 0.0010000000000000009) > 14.4
+    for: 2m
+    labels:
+      severity: page
+    annotations:
+      summary: Error budget burning >14.4x over 60m and 5m (SLO 99.9%)
+  - alert: ErrorBudgetBurn_page_360m
+    expr: (job:slo_errors:ratio_rate6h / 0.0010000000000000009) > 6.0 and (job:slo_errors:ratio_rate30m
+      / 0.0010000000000000009) > 6.0
+    for: 2m
+    labels:
+      severity: page
+    annotations:
+      summary: Error budget burning >6.0x over 360m and 30m (SLO 99.9%)
+  - alert: ErrorBudgetBurn_ticket_1440m
+    expr: (job:slo_errors:ratio_rate1d / 0.0010000000000000009) > 3.0 and (job:slo_errors:ratio_rate2h
+      / 0.0010000000000000009) > 3.0
+    for: 2m
+    labels:
+      severity: ticket
+    annotations:
+      summary: Error budget burning >3.0x over 1440m and 120m (SLO 99.9%)
+  - alert: ErrorBudgetBurn_ticket_4320m
+    expr: (job:slo_errors:ratio_rate3d / 0.0010000000000000009) > 1.0 and (job:slo_errors:ratio_rate6h
+      / 0.0010000000000000009) > 1.0
+    for: 2m
+    labels:
+      severity: ticket
+    annotations:
+      summary: Error budget burning >1.0x over 4320m and 360m (SLO 99.9%)

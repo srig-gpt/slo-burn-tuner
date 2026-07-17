@@ -1,0 +1,15 @@
+2026-07-16 23:27:35,960 INFO slo-burn-tuner: SLO=99.9%, budget ratio=0.0010, policy=[page: burn>14.4x over 60m & 5m, page: burn>6.0x over 360m & 30m, ticket: burn>3.0x over 1440m & 120m, ticket: burn>1.0x over 4320m & 360m]
+2026-07-16 23:27:36,281 INFO scenario=clean_week       should_page=False pages=0 tickets=0 ttd=None ttd_page=None budget_at_detect=- naive_pages=0 naive_ttd=None chart=clean_week.png
+2026-07-16 23:27:36,465 INFO scenario=fast_burn        should_page=True  pages=1 tickets=1 ttd=10 ttd_page=10 budget_at_detect=3.8% naive_pages=1 naive_ttd=0 chart=fast_burn.png
+2026-07-16 23:27:36,670 INFO scenario=slow_burn        should_page=True  pages=0 tickets=2 ttd=1052 ttd_page=None budget_at_detect=9.9% naive_pages=3 naive_ttd=4261 chart=slow_burn.png
+2026-07-16 23:27:36,853 INFO scenario=transient_spike  should_page=False pages=0 tickets=0 ttd=None ttd_page=None budget_at_detect=- naive_pages=1 naive_ttd=None chart=transient_spike.png
+2026-07-16 23:27:37,020 INFO scenario=night_flapping   should_page=False pages=0 tickets=0 ttd=None ttd_page=None budget_at_detect=- naive_pages=35 naive_ttd=None chart=night_flapping.png
+2026-07-16 23:27:37,201 INFO scenario=gradual_ramp     should_page=True  pages=1 tickets=1 ttd=329 ttd_page=329 budget_at_detect=2.1% naive_pages=14 naive_ttd=253 chart=gradual_ramp.png
+2026-07-16 23:27:37,206 INFO wrote /sessions/dreamy-adoring-volta/mnt/outputs/slo-burn-tuner/evidence/report.md and /sessions/dreamy-adoring-volta/mnt/outputs/slo-burn-tuner/evidence/prometheus_rules.yaml
+2026-07-16 23:27:37,207 INFO VERDICT clean_week       quiet
+2026-07-16 23:27:37,207 INFO VERDICT fast_burn        detected
+2026-07-16 23:27:37,207 INFO VERDICT slow_burn        detected
+2026-07-16 23:27:37,208 INFO VERDICT transient_spike  quiet
+2026-07-16 23:27:37,208 INFO VERDICT night_flapping   quiet
+2026-07-16 23:27:37,208 INFO VERDICT gradual_ramp     detected
+2026-07-16 23:27:37,208 INFO done
